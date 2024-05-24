@@ -3,14 +3,17 @@ import './About.css';
 
 function About() {
   const aboutRef = useRef();
+  const titleRef = useRef();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          aboutRef.current.classList.add('animate');
+          titleRef.current.classList.add('animate-in');
+          titleRef.current.classList.remove('animate-out');
         } else {
-          aboutRef.current.classList.remove('animate');
+          titleRef.current.classList.add('animate-out');
+          titleRef.current.classList.remove('animate-in');
         }
       },
       { threshold: 0.1 }
@@ -29,12 +32,20 @@ function About() {
 
   return (
     <section id="about" className="about" ref={aboutRef}>
-      <h2 className="about-title">ABOUT</h2>
+      <div className="about-title-container">
+        <h2 className="about-title" ref={titleRef}>
+          <span>A</span>
+          <span>B</span>
+          <span>O</span>
+          <span>U</span>
+          <span>T</span>
+        </h2>
+      </div>
       <div className="about-desc">
-      <p>HEY I'M AJAY VEGIRAJU</p>
-      <p>I'M A COMPUTER SCIENCE STUDENT AT THE UNIVERSITY OF WASHINGTON WITH A STRONG INTEREST IN SOFTWARE ENGINEERING AND TECHNOLOGY.</p>
-      <p>I HAVE EXPERIENCE WORKING WITH VARIOUS PROGRAMMING LANGUAGES AND FRAMEWORKS, INCLUDING JAVA, PYTHON, REACT.JS, AND MORE. I AM ALSO AN AWS CERTIFIED CLOUD PRACTITIONER.</p>
-      <p>I'M ALSO A CONTENT CREATOR AND HAVE BEEN CREATING CONTENT SINCE 2017, ALL THE WAY FROM INSTAGRAM PAGES TO YOUTUBE CHANNELS.</p>
+        <h1><b>HEY I'M AJAY VEGIRAJU</b></h1>
+        <p>I'M A COMPUTER SCIENCE STUDENT AT THE UNIVERSITY OF WASHINGTON WITH A STRONG INTEREST IN SOFTWARE ENGINEERING AND TECHNOLOGY.</p>
+        <p>I HAVE EXPERIENCE WORKING WITH VARIOUS PROGRAMMING LANGUAGES AND FRAMEWORKS, INCLUDING JAVA, PYTHON, REACT.JS, AND MORE. I AM ALSO AN AWS CERTIFIED CLOUD PRACTITIONER.</p>
+       
       </div>
     </section>
   );

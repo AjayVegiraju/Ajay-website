@@ -6,7 +6,9 @@ function Home() {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const backgroundText = document.querySelector('.background-text');
-      backgroundText.style.transform = `translateX(${scrollTop * 0.5}px)`;
+      if (backgroundText) {
+        backgroundText.style.transform = `translateX(${scrollTop * -2}px) translateY(-50%)`;
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -15,13 +17,12 @@ function Home() {
 
   return (
     <section id="home" className="home">
-      <div className="background-text">AJAY VEGIRAJU</div>
+      <div className="background-text">AJAY</div>
       <div className="hero">
         <div className="hero-content">
           <h1 className="hero-title">
             <span className="hero-text">Developer</span>
-            <span className="hero-text">Designer</span>
-            <span className="hero-text">Creator</span>
+            <span className="hero-text hero-outline">Technologist</span>
           </h1>
         </div>
       </div>

@@ -1,34 +1,106 @@
-.about {
-    padding: 100px 20px;
-    background-color: #f8f8f8;
-    color: #000;
-    text-align: left;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-  
-  .about.animate {
-    opacity: 1;
-    transform: translateY(0);
-  }
- 
-  .about-title {
-    font-size: 2.5em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    animation: fadeSide 1.5s ease-in-out;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap'); /* Example of font import */
 
- 
-  @keyframes fadeSide {
-    0% {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
+.about {
+  position: relative;
+  padding: 100px 20px;
+  background-color: #f5f5dc;
+  color: #000;
+  text-align: left;
+}
+
+.about-title-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.about-title {
+  display: flex;
+  font-size: 9em;
+  font-weight: Bold;
+  margin: 0;
+  font-family: 'Roboto', sans-serif; /* Ensuring the same font */
+
+  -webkit-text-stroke: 3px #000;
+  color: transparent;
+}
+
+.about-title span {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeIn 0.5s forwards;
+}
+
+.about-title.animate-in span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.about-title.animate-in span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.about-title.animate-in span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.about-title.animate-in span:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.about-title.animate-in span:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.about-title.animate-out span {
+  opacity: 1;
+  transform: translateX(0);
+  animation: fadeOut 0.5s forwards;
+}
+
+.about-title.animate-out span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.about-title.animate-out span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.about-title.animate-out span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.about-title.animate-out span:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.about-title.animate-out span:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
-  
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+
+.about-desc {
+  font-weight: Nom;
+  max-width: 800px;
+  margin: 100px auto 0;
+}
+
+.about-desc p {
+  font-size: 1.2em;
+  font-weight: normal;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
