@@ -21,8 +21,8 @@ function Home() {
       <div className="hero">
         <div className="hero-content">
           <h1 className="hero-title">
-            <span className="hero-text">Developer</span>
-            <span className="hero-text hero-outline">Technologist</span>
+            <span className="hero-text">Full Stack</span>
+            <span className="hero-text hero-outline">Developer</span>
           </h1>
         </div>
       </div>
