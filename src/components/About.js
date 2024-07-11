@@ -19,13 +19,15 @@ function About() {
       { threshold: 0.1 }
     );
 
-    if (aboutRef.current) {
-      observer.observe(aboutRef.current);
+    const currentAboutRef = aboutRef.current;
+
+    if (currentAboutRef) {
+      observer.observe(currentAboutRef);
     }
 
     return () => {
-      if (aboutRef.current) {
-        observer.unobserve(aboutRef.current);
+      if (currentAboutRef) {
+        observer.unobserve(currentAboutRef);
       }
     };
   }, []);
@@ -45,7 +47,6 @@ function About() {
         <h1><b>HEY I'M AJAY VEGIRAJU</b></h1>
         <p>I'M A COMPUTER SCIENCE STUDENT AT THE UNIVERSITY OF WASHINGTON WITH A STRONG INTEREST IN SOFTWARE ENGINEERING AND TECHNOLOGY.</p>
         <p>I HAVE EXPERIENCE WORKING WITH VARIOUS PROGRAMMING LANGUAGES AND FRAMEWORKS, INCLUDING JAVA, PYTHON, REACT.JS, AND MORE. I AM ALSO AN AWS CERTIFIED CLOUD PRACTITIONER.</p>
-       
       </div>
     </section>
   );
